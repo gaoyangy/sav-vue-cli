@@ -1,0 +1,32 @@
+{
+  "name": "sav-project",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "cross-env NODE_ENV=production npm-run-all -p build-client && npm run build-server && npm run build-sass",
+    "build-client": "node ./scripts/build-client.js",
+    "build-sass": "node ./scripts/build-sass.js",
+    "build-server": "node ./scripts/build-server.js",
+    "build-static": "cross-env NODE_ENV=development IS_MOCK=1 IS_LOCAL=1 IS_DEV=1 node ./scripts/build-client.js",
+    "build-local": "cross-env NODE_ENV=production IS_LOCAL=0 IS_DEV=0 node ./scripts/build-client.js",
+    "sav-cli": ".\\node_modules\\.bin\\sav-cli",
+    "interface": "sav-cli -i interface -m contract,action,sass,vue,rollup"
+  },
+  "devDependencies": {
+    "cross-env": "^5.0.5",
+    "iview": "^2.7.3",
+    "koa": "^2.3.0",
+    "koa-static": "^4.0.1",
+    "node-sass": "^4.5.3",
+    "npm-run-all": "^4.1.1",
+    "rollup-standalone": "^0.42.12",
+    "sav": "^1.0.27",
+    "sav-flux": "0.0.20",
+    "vue": "^2.4.2",
+    "vue-router": "^2.7.0",
+    "vue-server-renderer": "^2.4.2",
+    "vue-template-compiler": "^2.4.2"
+  },
+  "dependencies": {
+    "sav-util": "^1.0.24"
+  }
+}
